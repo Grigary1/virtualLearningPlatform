@@ -1,12 +1,12 @@
+import { View, Text } from 'react-native'
 import React from 'react'
-import { Text, View } from 'react-native'
 
-function index() {
+import { Redirect } from 'expo-router'
+
+export default function index() {
   return (
     <View>
-      <Text className='text-3xl text-white'>Hey</Text>
+      <Redirect href="/LoginScreen"/>
     </View>
   )
 }
-
-export default index
