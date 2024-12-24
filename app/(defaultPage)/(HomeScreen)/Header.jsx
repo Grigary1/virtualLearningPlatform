@@ -16,7 +16,7 @@ const Header = () => {
     const getCategoryData = () => {
         getCategory().then(response => {
                 console.log(response); // Log the response
-                setCategories(response.categories);
+                setCategories(response);
             })
             .catch(error => {
                 console.error("Error fetching category:", error); // Handle the error
