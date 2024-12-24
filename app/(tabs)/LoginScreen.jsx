@@ -6,7 +6,7 @@ export default function LoginScreen() {
     <View>
       <Image className="w-[100%] h-[400] object-cover" source={require('./../../assets/images/rocket.jpg')} />
       <View className="p-[20]">
-        <Text className="text-4xl font-bold">Welcome To <Text style={{ color: Colors.textCol.PRIMARY }}>CodeBox</Text></Text>
+        <Text className="text-4xl font-bold">Welcome To {'\n'}<Text style={{ color: Colors.textCol.PRIMARY }}>CodeBox</Text></Text>
         <Text style={{ color: Colors.textCol.GRAY }}>Learn Programming to Build Real Life Projects</Text>
 
         {/* SignIn Button */}
