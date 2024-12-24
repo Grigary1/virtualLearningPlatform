@@ -7,6 +7,8 @@ import profilePic from './../../../assets/images/man.png'; // Ensure the path is
 
 const Header = () => {
 
+    const [categories,setCategories]=useState();
+
     useEffect(()=>{
         getCategoryData();
     },[])
@@ -14,6 +16,7 @@ const Header = () => {
     const getCategoryData = () => {
         getCategory().then(response => {
                 console.log(response); // Log the response
+                setCategories(response.categories);
             })
             .catch(error => {
                 console.error("Error fetching category:", error); // Handle the error
