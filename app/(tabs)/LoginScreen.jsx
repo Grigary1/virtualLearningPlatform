@@ -1,6 +1,9 @@
 import { View, Text, Image, TouchableOpacity, TouchableHighlight, Touchable } from 'react-native'
 import React from 'react'
 import { Colors } from './../../constants/Colors.ts'
+import { useRouter } from 'expo-router'
+
+const route=useRouter();
 export default function LoginScreen() {
   return (
     <View>
@@ -10,7 +13,7 @@ export default function LoginScreen() {
         <Text style={{ color: Colors.textCol.GRAY }}>Learn Programming to Build Real Life Projects</Text>
 
         {/* SignIn Button */}
-        <TouchableOpacity onPress={()=>console.log('Click Event')}>
+        <TouchableOpacity onPress={()=>route.push('/(defaultPage)')}>
           <View style={{ backgroundColor: Colors.textCol.PRIMARY }} className="p-3 rounded-full mt-[60]">
             <Text className="text-center text-white text-xl">Sign In</Text>
           </View>
