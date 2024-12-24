@@ -1,6 +1,6 @@
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
+import { Redirect, Stack } from 'expo-router';
 import { tokenCache } from '@/cache'
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
@@ -41,9 +41,11 @@ export default function RootLayout() {
       <ClerkLoaded>
         <ThemeProvider value={colorScheme === 'dark' ? DefaultTheme : DefaultTheme}>
           <Stack>
-            <Stack.Screen name="(home)" options={{ headerShown: false }} />
+            <Stack.Screen name="(defaultPage)" options={{headerShown:false}}/>
+            <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
             <Stack.Screen name="+not-found" />
           </Stack>
+          <Redirect href='LoginScreen'/>
           <StatusBar style="auto" />
         </ThemeProvider>
       </ClerkLoaded>
