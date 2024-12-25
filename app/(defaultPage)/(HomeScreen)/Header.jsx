@@ -1,27 +1,13 @@
 import { View, Text, Image, TextInput } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import Colors from './../../../constants/Colors.ts';
-import getCategory from './../../../constants/GlobalApi';
+
 import EvilIcons from '@expo/vector-icons/EvilIcons';
 import profilePic from './../../../assets/images/man.png'; // Ensure the path is correct
 
 const Header = () => {
 
-    const [categories,setCategories]=useState();
-
-    useEffect(()=>{
-        getCategoryData();
-    },[])
-
-    const getCategoryData = () => {
-        getCategory().then(response => {
-                console.log(response); // Log the response
-                setCategories(response.categories);
-            })
-            .catch(error => {
-                console.error("Error fetching category:", error); // Handle the error
-            });
-    };
+    
 
     const [userDetail, setUserDetail] = useState(null);
 
